@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trade Connect Scotland — connecting trusted trades, creating real referrals and helping Scottish trade businesses grow together." />
+  <title>Trade Connect Scotland | Connect • Collaborate • Grow</title>
+  <style>
+    :root {
+      --navy: #0a3467;
+      --navy-deep: #061f3f;
+      --blue: #174d86;
+      --grey: #62666b;
+      --light: #f4f6f8;
+      --white: #ffffff;
+      --line: #dce3ea;
+      --text: #17212b;
+      --shadow: 0 18px 50px rgba(6,31,63,.12);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      background: var(--navy-deep);
+      color: #dbe7f4;
+      font-size: 14px;
+      padding: 9px 0;
+      text-align: center;
+      letter-spacing: .03em;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220,227,234,.8);
+    }
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 225px;
+    }
+    .brand img {
+      width: 78px;
+      height: 58px;
+      object-fit: contain;
+    }
+    .brand-text { line-height: 1.05; }
+    .brand-text strong {
+      display: block;
+      color: var(--navy);
+      font-size: 17px;
+      letter-spacing: .05em;
+    }
+    .brand-text span {
+      display: block;
+      color: var(--grey);
+      font-size: 11px;
+      letter-spacing: .22em;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-weight: 650;
+      font-size: 14px;
+    }
+    nav a:hover { color: var(--navy); }
+    .nav-cta {
+      color: var(--white);
+      background: var(--navy);
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(10,52,103,.22);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 22%, rgba(23,77,134,.16), transparent 28%),
+        linear-gradient(135deg, #f7f9fb 0%, #ffffff 50%, #eef3f8 100%);
+      padding: 86px 0 74px;
+    }
+    .hero:before {
+      content:"";
+      position:absolute;
+      width:360px;height:360px;border:1px solid rgba(10,52,103,.08);
+      border-radius:50%;right:-130px;bottom:-170px;
+    }
+    .hero-grid {
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items:center;
+      gap: 64px;
+    }
+    .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--navy);
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:18px;
+    }
+    .eyebrow:before { content:""; width:36px;height:2px;background:var(--navy); }
+    h1 {
+      margin:0 0 22px;
+      color:var(--navy-deep);
+      font-size: clamp(46px, 6vw, 78px);
+      line-height:.98;
+      letter-spacing:-.045em;
+      max-width:760px;
+    }
+    .hero p {
+      font-size:19px;
+      color:#4d5b69;
+      max-width:680px;
+      margin:0 0 30px;
+    }
+    .actions { display:flex; flex-wrap:wrap; gap:14px; }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:15px 22px;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .btn-primary { background:var(--navy); color:white; }
+    .btn-primary:hover { transform:translateY(-2px); background:var(--blue); }
+    .btn-secondary { background:white; color:var(--navy); border-color:var(--line); }
+    .btn-secondary:hover { transform:translateY(-2px); border-color:#b9c7d6; }
+    .hero-card {
+      background:white;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      transform:none;
+    }
+    .hero-card img {
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:contain;
+      border-radius:20px;
+      background:white;
+    }
+    .hero-card .tag {
+      margin-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--grey);
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:800;
+    }
+
+    .stats {
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:#fff;
+    }
+    .stats-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+    .stat {
+      padding:28px 18px;
+      text-align:center;
+      border-right:1px solid var(--line);
+    }
+    .stat:last-child { border-right:0; }
+    .stat strong { display:block; color:var(--navy); font-size:24px; }
+    .stat span { color:var(--grey); font-size:13px; }
+
+    section { padding:88px 0; }
+    .section-head { max-width:720px; margin-bottom:42px; }
+    .section-head h2 {
+      margin:0 0 12px;
+      color:var(--navy-deep);
+      font-size:clamp(32px,4vw,48px);
+      line-height:1.05;
+      letter-spacing:-.035em;
+    }
+    .section-head p { margin:0; color:#5f6b76; font-size:18px; }
+
+    .cards {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .card {
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:28px;
+      background:#fff;
+      box-shadow:0 8px 28px rgba(6,31,63,.06);
+    }
+    .icon {
+      width:48px;height:48px;border-radius:14px;
+      display:grid;place-items:center;
+      background:#edf3f9;color:var(--navy);
+      font-weight:900;font-size:20px;
+      margin-bottom:18px;
+    }
+    .card h3 { margin:0 0 10px; color:var(--navy-deep); font-size:21px; }
+    .card p { margin:0; color:#66727d; }
+
+    .dark {
+      background:var(--navy-deep);
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .dark .section-head h2, .dark h3 { color:white; }
+    .dark .section-head p, .dark p { color:#c3d0de; }
+    .steps {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .step {
+      padding:30px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      border-radius:var(--radius);
+    }
+    .num {
+      display:inline-grid;
+      width:42px;height:42px;place-items:center;
+      border-radius:50%;
+      background:white;color:var(--navy);
+      font-weight:900;margin-bottom:20px;
+    }
+
+    .directory {
+      background:var(--light);
+    }
+    .directory-groups {
+      display:grid;
+      gap:42px;
+    }
+    .directory-group {
+      background:white;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:0 10px 34px rgba(6,31,63,.05);
+    }
+    .directory-toggle {
+      width:100%;
+      border:0;
+      background:transparent;
+      padding:0;
+      text-align:left;
+      cursor:pointer;
+      color:inherit;
+      font:inherit;
+    }
+    .directory-toggle .group-heading {
+      margin-bottom:0;
+    }
+    .directory-toggle .toggle-arrow {
+      margin-left:auto;
+      flex:0 0 44px;
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line);
+      color:var(--navy);
+      font-size:22px;
+      font-weight:900;
+      transition:transform .2s ease;
+      background:#fff;
+    }
+    .directory-group.open .directory-toggle .toggle-arrow {
+      transform:rotate(180deg);
+    }
+    .directory-content {
+      display:none;
+      margin-top:22px;
+    }
+    .directory-group.open .directory-content {
+      display:block;
+    }
+    .group-heading {
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      margin-bottom:22px;
+    }
+    .group-heading h3 {
+      margin:0 0 5px;
+      color:var(--navy-deep);
+      font-size:25px;
+    }
+    .group-heading p {
+      margin:0;
+      color:#66727d;
+    }
+    .group-kicker {
+      flex:0 0 44px;
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      border-radius:13px;
+      background:var(--navy);
+      color:white;
+      font-weight:900;
+      font-size:13px;
+    }
+    .trade-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .trade {
+      background:white;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      font-weight:800;
+      color:var(--navy-deep);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .trade-main {
+      display:flex;
+      flex-direction:column;
+      gap:5px;
+      min-width:0;
+    }
+    .trade small { color:var(--grey); font-weight:650; }
+    .status-badge {
+      display:inline-flex;
+      width:max-content;
+      align-items:center;
+      padding:5px 9px;
+      border-radius:999px;
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .status-badge.available {
+      background:#edf7ef;
+      color:#24613a;
+    }
+    .status-badge.taken {
+      background:#eef2f6;
+      color:#4a5867;
+    }
+    .trade-action {
+      flex:0 0 auto;
+      color:var(--navy);
+      font-weight:900;
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+
+    .member-panel {
+      margin-top: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 36px rgba(6,31,63,.07);
+      display: none;
+    }
+    .member-panel.active { display: block; }
+    .member-panel-head {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    .member-panel-head h3 {
+      margin:0 0 5px;
+      color:var(--navy-deep);
+      font-size:28px;
+    }
+    .member-panel-head p { margin:0; color:#66727d; }
+    .member-close {
+      border:1px solid var(--line);
+      background:white;
+      border-radius:999px;
+      padding:8px 13px;
+      cursor:pointer;
+      font-weight:800;
+      color:var(--navy);
+    }
+    .member-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .member-card {
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      background:#fbfcfd;
+    }
+    .member-card.full {
+      grid-column:1 / -1;
+      padding:26px;
+      background:#fff;
+      border-color:#cbd8e4;
+    }
+    .member-full-grid {
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .member-card.full .member-logo {
+      width:110px;
+      height:110px;
+      font-size:30px;
+      border-radius:26px;
+      margin-bottom:0;
+    }
+    .member-card.full h4 {
+      font-size:26px;
+      margin-bottom:8px;
+    }
+    .member-full-contact {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+    .member-service-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+    .member-service-list span {
+      padding:7px 10px;
+      border-radius:999px;
+      background:#eef4fa;
+      color:var(--navy);
+      font-weight:800;
+      font-size:12px;
+    }
+    .member-logo {
+      width:58px;
+      height:58px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:var(--navy);
+      color:white;
+      font-weight:900;
+      font-size:18px;
+      margin-bottom:14px;
+    }
+    .member-card h4 {
+      margin:0 0 5px;
+      color:var(--navy-deep);
+      font-size:19px;
+    }
+    .member-meta {
+      color:var(--grey);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .member-card p {
+      color:#5f6b76;
+      font-size:14px;
+      margin:0 0 16px;
+    }
+    .member-badge {
+      display:inline-flex;
+      margin:0 0 14px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#e8f0f8;
+      color:var(--navy);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .member-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+    }
+    .mini-btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:9px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:12px;
+      border:1px solid var(--line);
+      background:white;
+      color:var(--navy);
+      cursor:pointer;
+    }
+    .mini-btn.primary {
+      background:var(--navy);
+      color:white;
+      border-color:var(--navy);
+    }
+    .trade {
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .trade:hover {
+      transform:translateY(-2px);
+      border-color:#b9c7d6;
+      box-shadow:0 8px 22px rgba(6,31,63,.08);
+    }
+    .profile-note {
+      margin-top:18px;
+      padding:14px 16px;
+      background:#eef4fa;
+      border-radius:14px;
+      color:#506173;
+      font-size:13px;
+    }
+
+    .join-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:52px;
+      align-items:start;
+    }
+    .pricing-card {
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:24px;
+      align-items:center;
+      padding:22px;
+      margin:0 0 22px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#fbfcfd;
+    }
+    .pricing-label {
+      display:block;
+      color:var(--navy);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:4px;
+    }
+    .pricing-price {
+      color:var(--navy-deep);
+      font-size:34px;
+      font-weight:900;
+      line-height:1;
+    }
+    .pricing-price small {
+      font-size:14px;
+      color:var(--grey);
+      font-weight:800;
+    }
+    .pricing-monthly {
+      color:var(--grey);
+      font-size:13px;
+      margin-top:6px;
+    }
+    .pricing-copy {
+      color:#5f6b76;
+      font-size:15px;
+    }
+    .benefits {
+      display:grid;
+      gap:14px;
+    }
+    .benefit {
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:18px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .tick {
+      flex:0 0 30px;
+      width:30px;height:30px;border-radius:50%;
+      display:grid;place-items:center;
+      background:#edf3f9;color:var(--navy);font-weight:900;
+    }
+    form {
+      background:white;
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    form h3 { margin-top:0; color:var(--navy-deep); font-size:26px; }
+    label { display:block; font-size:13px; font-weight:800; margin:14px 0 7px; color:#344150; }
+    input, select, textarea {
+      width:100%;
+      border:1px solid #ccd6df;
+      border-radius:12px;
+      padding:13px 14px;
+      font:inherit;
+      background:#fbfcfd;
+    }
+    textarea { min-height:100px; resize:vertical; }
+    form button { width:100%; margin-top:18px; cursor:pointer; font:inherit; }
+
+
+    .full-profile {
+      padding:88px 0;
+      background:#fff;
+    }
+    .profile-shell {
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:34px;
+      align-items:start;
+    }
+    .profile-card-large {
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      background:#fbfcfd;
+      box-shadow:var(--shadow);
+      position:sticky;
+      top:110px;
+    }
+    .profile-logo-large {
+      width:92px;
+      height:92px;
+      border-radius:24px;
+      display:grid;
+      place-items:center;
+      background:var(--navy);
+      color:#fff;
+      font-weight:900;
+      font-size:28px;
+      margin-bottom:20px;
+    }
+    .profile-card-large h3 {
+      margin:0 0 8px;
+      color:var(--navy-deep);
+      font-size:30px;
+      line-height:1.1;
+    }
+    .profile-role {
+      color:var(--navy);
+      font-weight:800;
+      margin-bottom:14px;
+    }
+    .profile-contact {
+      display:grid;
+      gap:10px;
+      margin:20px 0 0;
+    }
+    .profile-contact a {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:white;
+      color:var(--navy);
+      font-weight:800;
+    }
+    .profile-content {
+      display:grid;
+      gap:22px;
+    }
+    .profile-block {
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      background:white;
+    }
+    .profile-block h3 {
+      margin:0 0 12px;
+      color:var(--navy-deep);
+      font-size:24px;
+    }
+    .service-chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+    .service-chip {
+      padding:9px 12px;
+      border-radius:999px;
+      background:#eef4fa;
+      color:var(--navy);
+      font-weight:800;
+      font-size:13px;
+    }
+
+    .faq-list {
+      display:grid;
+      gap:12px;
+      max-width:900px;
+    }
+    .faq-item {
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:white;
+      padding:0 18px;
+    }
+    .faq-item summary {
+      list-style:none;
+      cursor:pointer;
+      padding:18px 34px 18px 0;
+      font-weight:900;
+      color:var(--navy-deep);
+      position:relative;
+    }
+    .faq-item summary::-webkit-details-marker { display:none; }
+    .faq-item summary:after {
+      content:"+";
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--navy);
+      font-size:24px;
+      font-weight:900;
+    }
+    .faq-item[open] summary:after { content:"–"; }
+    .faq-item p {
+      margin:0;
+      padding:0 0 18px;
+      color:#5f6b76;
+    }
+
+    .cta {
+      padding:72px 0;
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+      color:white;
+      text-align:center;
+    }
+    .cta h2 { margin:0 0 12px; font-size:clamp(32px,4vw,48px); }
+    .cta p { margin:0 auto 26px; max-width:650px; color:#dce9f6; font-size:18px; }
+    .cta .btn { background:white; color:var(--navy); }
+
+    footer { background:#06182e; color:#aebccb; padding:46px 0 28px; }
+    .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:36px; }
+    footer strong { color:white; }
+    footer a { display:block; margin:8px 0; }
+    .copyright { border-top:1px solid rgba(255,255,255,.1); margin-top:32px; padding-top:20px; font-size:13px; }
+
+    @media (max-width: 900px) {
+      nav a:not(.nav-cta) { display:none; }
+      .hero-grid, .join-grid { grid-template-columns:1fr; }
+      .hero-card { max-width:520px; }
+      .cards, .steps { grid-template-columns:1fr; }
+      .trade-grid { grid-template-columns:repeat(2,1fr); }
+      .stats-grid { grid-template-columns:repeat(2,1fr); }
+      .stat:nth-child(2) { border-right:0; }
+      .footer-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 560px) {
+      .container { width:min(100% - 26px,1160px); }
+      .topbar { font-size:12px; }
+      .brand-text { display:none; }
+      .nav { min-height:72px; }
+      .nav-cta { padding:10px 14px; }
+      .hero { padding:58px 0; }
+      .hero-grid { gap:34px; }
+      h1 { font-size:48px; }
+      .hero p { font-size:17px; }
+      section { padding:64px 0; }
+      .trade-grid { grid-template-columns:1fr; }
+      .directory-group { padding:20px; }
+      .member-grid { grid-template-columns:1fr; }
+      .member-full-grid { grid-template-columns:1fr; }
+      .pricing-card { grid-template-columns:1fr; }
+      .group-heading { gap:12px; }
+      .group-heading h3 { font-size:22px; }
+      .stats-grid { grid-template-columns:1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Scotland-wide trade networking • Trusted referrals • Better business connections</div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <img src="assets/trade-connect-scotland-logo.jpeg" alt="Trade Connect Scotland logo" />
+        <div class="brand-text">
+          <strong>TRADE CONNECT</strong>
+          <span>Scotland</span>
+        </div>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#how">How It Works</a>
+        <a href="#trades">Find a Trade</a>
+        <a href="#join">Membership</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#join">Join the Network</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Connect • Collaborate • Grow</div>
+          <h1 id="heroTitle">One Trade. One Area. One Member.</h1>
+          <p id="heroText">A referral network connecting trusted trades, property professionals and supporting businesses across Scotland — with only one member from each category in every local area.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#trades">Check Your Trade Is Available</a>
+            <a class="btn btn-secondary" href="#how">How It Works</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="assets/trade-connect-scotland-logo.jpeg" alt="Trade Connect Scotland" />
+          <div class="tag"><span>Scotland</span><span>Trade Referral Network</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>Local</strong><span>Scottish trade businesses</span></div>
+        <div class="stat"><strong>Trusted</strong><span>Relationship-led referrals</span></div>
+        <div class="stat"><strong>Connected</strong><span>Cross-trade opportunities</span></div>
+        <div class="stat"><strong>Growing</strong><span>Built for ambitious trades</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Why Trade Connect Scotland</div>
+          <h2>A trade network built around real relationships.</h2>
+          <p>No awkward corporate networking. The focus is straightforward: get good tradespeople in the same room, build trust and help one another win more of the right work.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Quality referrals</h3>
+            <p>Members can pass genuine leads to people they know, trust and are happy to recommend.</p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Strong trade connections</h3>
+            <p>Build a reliable network of complementary trades for projects, subcontracting and collaboration.</p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Business growth</h3>
+            <p>Create more visibility for your company, meet new contacts and develop long-term working relationships.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="how">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow" style="color:#d7e6f5">How it works</div>
+          <h2>Simple, useful and built for trades.</h2>
+          <p>Trade Connect Scotland is designed to make networking practical rather than complicated.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="num">1</div><h3>Join</h3><p>Apply to become part of your local Trade Connect network and tell us about your business and trade.</p></article>
+          <article class="step"><div class="num">2</div><h3>Connect</h3><p>Attend meetings, get to know other members and build confidence in the businesses around you.</p></article>
+          <article class="step"><div class="num">3</div><h3>Grow</h3><p>Pass referrals, collaborate on work and build a stronger pipeline through trusted relationships.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="directory" id="trades">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Find a Trade</div>
+          <h2>One network. Multiple trades.</h2>
+          <p>Choose a section below to view the available trades, suppliers and professional categories within the network.</p>
+        </div>
+        <div class="directory-groups">
+          <div class="directory-group">
+            <button class="directory-toggle" type="button" aria-expanded="false">
+              <div class="group-heading">
+                <span class="group-kicker">01</span>
+                <div>
+                  <h3>Trades & Construction</h3>
+                  <p>Skilled trades and contractors for domestic, commercial and development work.</p>
+                </div>
+                <span class="toggle-arrow" aria-hidden="true">⌄</span>
+              </div>
+            </button>
+            <div class="directory-content">
+              <div class="trade-grid">
+              <div class="trade" data-category="Joiner" data-status="taken"><div class="trade-main"><span>Joiner</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Electrician" data-status="available"><div class="trade-main"><span>Electrician</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Plumber & Heating Engineer" data-status="available"><div class="trade-main"><span>Plumber & Heating Engineer</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Painter & Decorator" data-status="taken"><div class="trade-main"><span>Painter & Decorator</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Roofer" data-status="available"><div class="trade-main"><span>Roofer</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Groundworker" data-status="available"><div class="trade-main"><span>Groundworker</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Plasterer" data-status="available"><div class="trade-main"><span>Plasterer</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Tiler" data-status="available"><div class="trade-main"><span>Tiler</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Builder" data-status="taken"><div class="trade-main"><span>Builder</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Bricklayer" data-status="available"><div class="trade-main"><span>Bricklayer</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Kitchen Fitter" data-status="available"><div class="trade-main"><span>Kitchen Fitter</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Bathroom Fitter" data-status="available"><div class="trade-main"><span>Bathroom Fitter</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Flooring Specialist" data-status="taken"><div class="trade-main"><span>Flooring Specialist</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Window & Door Company" data-status="taken"><div class="trade-main"><span>Window & Door Company</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Scaffolder" data-status="available"><div class="trade-main"><span>Scaffolder</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Landscaper" data-status="available"><div class="trade-main"><span>Landscaper</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Fencing & Decking" data-status="available"><div class="trade-main"><span>Fencing & Decking</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Cleaning Company" data-status="available"><div class="trade-main"><span>Cleaning Company</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+            </div>
+            </div>
+          </div>
+
+          <div class="directory-group">
+            <button class="directory-toggle" type="button" aria-expanded="false">
+              <div class="group-heading">
+                <span class="group-kicker">02</span>
+                <div>
+                  <h3>Suppliers & Site Services</h3>
+                  <p>Businesses that support trades, contractors and projects from supply through to completion.</p>
+                </div>
+                <span class="toggle-arrow" aria-hidden="true">⌄</span>
+              </div>
+            </button>
+            <div class="directory-content">
+              <div class="trade-grid">
+              <div class="trade" data-category="Kitchen Supplier" data-status="available"><div class="trade-main"><span>Kitchen Supplier</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Bathroom Supplier" data-status="available"><div class="trade-main"><span>Bathroom Supplier</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Skip Hire" data-status="available"><div class="trade-main"><span>Skip Hire</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Waste Management" data-status="taken"><div class="trade-main"><span>Waste Management</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Tool & Plant Hire" data-status="available"><div class="trade-main"><span>Tool & Plant Hire</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Builders Merchant" data-status="available"><div class="trade-main"><span>Builders Merchant</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Timber Supplier" data-status="available"><div class="trade-main"><span>Timber Supplier</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Steel Fabricator" data-status="available"><div class="trade-main"><span>Steel Fabricator</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+            </div>
+            </div>
+          </div>
+
+          <div class="directory-group">
+            <button class="directory-toggle" type="button" aria-expanded="false">
+              <div class="group-heading">
+                <span class="group-kicker">03</span>
+                <div>
+                  <h3>Property & Professional Services</h3>
+                  <p>Professional businesses supporting property owners, developers and trade companies.</p>
+                </div>
+                <span class="toggle-arrow" aria-hidden="true">⌄</span>
+              </div>
+            </button>
+            <div class="directory-content">
+              <div class="trade-grid">
+              <div class="trade" data-category="Architect" data-status="available"><div class="trade-main"><span>Architect</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Structural Engineer" data-status="taken"><div class="trade-main"><span>Structural Engineer</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Quantity Surveyor" data-status="available"><div class="trade-main"><span>Quantity Surveyor</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Planning Consultant" data-status="available"><div class="trade-main"><span>Planning Consultant</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Estate Agent" data-status="taken"><div class="trade-main"><span>Estate Agent</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Mortgage Broker" data-status="taken"><div class="trade-main"><span>Mortgage Broker</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Solicitor" data-status="available"><div class="trade-main"><span>Solicitor</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Accountant" data-status="taken"><div class="trade-main"><span>Accountant</span><span class="status-badge taken">Taken</span></div><span class="trade-action">View →</span></div>
+              <div class="trade" data-category="Insurance Broker" data-status="available"><div class="trade-main"><span>Insurance Broker</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Property Management" data-status="available"><div class="trade-main"><span>Property Management</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Surveyor" data-status="available"><div class="trade-main"><span>Surveyor</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+              <div class="trade" data-category="Property Photographer" data-status="available"><div class="trade-main"><span>Property Photographer</span><span class="status-badge available">Available</span></div><span class="trade-action">Secure this position →</span></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="member-panel" id="memberPanel">
+          <div class="member-panel-head">
+            <div>
+              <h3 id="memberCategory">Approved members</h3>
+              <p id="memberIntro">Browse businesses in this category.</p>
+            </div>
+            <button class="member-close" type="button" onclick="closeMembers()">Close</button>
+          </div>
+          <div class="member-grid" id="memberGrid"></div>
+          <div class="profile-note">
+            Demo member profiles are shown for the website concept. These can be replaced with real approved members as businesses join Trade Connect Scotland.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="container join-grid">
+        <div>
+          <div class="section-head">
+            <div class="eyebrow">Membership</div>
+            <h2>Grow your business through people who understand your trade.</h2>
+            <p>Membership is aimed at reliable, established businesses that value reputation, collaboration and professional standards.</p>
+          </div>
+
+          <div class="pricing-card">
+            <div>
+              <span class="pricing-label">Annual Membership</span>
+              <div class="pricing-price">£<span id="membershipPrice">450</span> <small>per year</small></div>
+              <div class="pricing-monthly">Equivalent to £<span id="membershipMonthly">37.50</span> per month</div>
+            </div>
+            <div class="pricing-copy">
+              Your membership includes local category exclusivity, a member profile, networking meetings, referral opportunities, business introductions and access to the wider Trade Connect Scotland network.
+            </div>
+          </div>
+
+          <div class="benefits">
+            <div class="benefit"><div class="tick">✓</div><div><strong>Member profile</strong><br><span>Showcase your business, trade and coverage area.</span></div></div>
+            <div class="benefit"><div class="tick">✓</div><div><strong>Referral opportunities</strong><br><span>Generate work through trusted member introductions.</span></div></div>
+            <div class="benefit"><div class="tick">✓</div><div><strong>Networking meetings</strong><br><span>Meet other trades and build relationships face to face.</span></div></div>
+            <div class="benefit"><div class="tick">✓</div><div><strong>Collaboration</strong><br><span>Find reliable partners for larger or multi-trade projects.</span></div></div>
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Thanks — this demo form is ready to be connected to your email or CRM.');">
+          <h3>Register your interest</h3>
+          <label for="name">Your name</label>
+          <input id="name" name="name" placeholder="Full name" required>
+          <label for="company">Company</label>
+          <input id="company" name="company" placeholder="Business name" required>
+          <label for="trade">Main trade</label>
+          <select id="trade" name="trade">
+            <option>Joiner</option>
+            <option>Electrician</option>
+            <option>Plumber & Heating Engineer</option>
+            <option>Painter & Decorator</option>
+            <option>Roofer</option>
+            <option>Groundworker</option>
+            <option>Plasterer</option>
+            <option>Tiler</option>
+            <option>Builder</option>
+            <option>Bricklayer</option>
+            <option>Flooring Specialist</option>
+            <option>Window & Door Company</option>
+            <option>Scaffolder</option>
+            <option>Skip Hire</option>
+            <option>Kitchen Supplier</option>
+            <option>Bathroom Supplier</option>
+            <option>Kitchen Fitter</option>
+            <option>Bathroom Fitter</option>
+            <option>Architect</option>
+            <option>Structural Engineer</option>
+            <option>Quantity Surveyor</option>
+            <option>Planning Consultant</option>
+            <option>Estate Agent</option>
+            <option>Mortgage Broker</option>
+            <option>Solicitor</option>
+            <option>Accountant</option>
+            <option>Insurance Broker</option>
+            <option>Property Management</option>
+            <option>Cleaning Company</option>
+            <option>Waste Management</option>
+            <option>Landscaper</option>
+            <option>Fencing & Decking</option>
+            <option>Other</option>
+          
+            <option>Tool & Plant Hire</option>
+            <option>Builders Merchant</option>
+            <option>Timber Supplier</option>
+            <option>Steel Fabricator</option>
+            <option>Surveyor</option>
+            <option>Property Photographer</option></select>
+          <label for="area">Area covered</label>
+          <input id="area" name="area" placeholder="e.g. Perth & Kinross">
+          <label for="message">Tell us about your business</label>
+          <textarea id="message" name="message" placeholder="A short introduction..."></textarea>
+          <button class="btn btn-primary" type="submit">Apply to Join</button>
+        </form>
+      </div>
+    </section>
+
+
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Frequently Asked Questions</div>
+          <h2>Everything you need to know before joining.</h2>
+          <p>Quick answers to the questions businesses are most likely to ask.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Can another company from my trade join the same area?</summary>
+            <p>No. Each local area is limited to one member per trade or professional category. Once your position is secured, another business from the same category would not be accepted into that local group.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What area does my membership cover?</summary>
+            <p>Your membership is linked to the local Trade Connect Scotland area or chapter you join. The exact area boundaries and chapter structure will be confirmed as the network develops.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How often will meetings take place?</summary>
+            <p>The meeting schedule is still being finalised. Dates, times and venue details will be confirmed before launch.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What happens if my category is already taken?</summary>
+            <p>You can still register your interest. We can discuss availability in another local area or keep your details for a future chapter.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Who can join?</summary>
+            <p>Trade Connect Scotland is designed for reliable trades, suppliers, property professionals and other businesses that naturally benefit from referrals and collaboration within the construction and property sectors.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How much is membership?</summary>
+            <p>Membership is £450 per year, equivalent to £37.50 per month. The aim is for the value of referrals, introductions and protected local category access to comfortably outweigh the annual fee.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Build a stronger trade network.</h2>
+        <p>Whether you're looking for trusted trades or want to grow your own business, Trade Connect Scotland is built to make the right introductions.</p>
+        <a class="btn" href="#join">Become a Founding Member</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>Trade Connect Scotland</strong>
+          <p>Connecting Scotland's trades through trusted relationships, referrals and collaboration.</p>
+        </div>
+        <div>
+          <strong>Explore</strong>
+          <a href="#how">How It Works</a>
+          <a href="#trades">Find a Trade</a>
+          <a href="#join">Membership</a>
+        </div>
+        <div>
+          <strong>Coming next</strong>
+          <a href="#">Member Directory</a>
+          <a href="#">Events & Meetings</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="copyright">© 2026 Trade Connect Scotland. Connect • Collaborate • Grow.</div>
+    </div>
+  </footer>
+
+  <script>
+    const memberData = {
+      "Joiner": [
+        {
+          name:"L Guthrie Joinery & Construction Ltd",
+          initials:"LG",
+          area:"Perth & surrounding areas",
+          desc:"All-trades joinery and construction company covering kitchens and bathrooms, doors and windows, renovations and extensions, flooring and finishes, bespoke furniture and storage, outdoor works and commercial fit-outs.",
+          phone:"07754 480800",
+          website:"https://www.guthriejoinery.com/",
+          email:"admin@guthriejoinery.com",
+          featured:true,
+          fullProfile:true,
+          services:["Joinery","Kitchens","Bathrooms","Renovations","Extensions","Doors & Windows","Flooring","Bespoke Storage","Outdoor Works","Commercial Fit-Outs"]
+        }
+      ],
+      "Electrician": [
+        {name:"Example Electrical Ltd", initials:"EE", area:"Perthshire", desc:"Domestic and commercial electrical work, testing, rewires and lighting installations."}
+      ],
+      "Plumber & Heating Engineer": [
+        {name:"Example Plumbing & Heating", initials:"PH", area:"Perth & Dundee", desc:"Plumbing, heating upgrades, bathrooms, boilers and maintenance."}
+      ],
+      "Painter & Decorator": [
+        {name:"Example Decorating Co.", initials:"ED", area:"Perthshire", desc:"Interior and exterior decorating for homes, offices and commercial premises."}
+      ],
+      "Architect": [
+        {name:"Example Architecture Studio", initials:"EA", area:"Scotland", desc:"Residential extensions, conversions, planning applications and design services."}
+      ],
+      "Structural Engineer": [
+        {name:"Example Structural Consulting", initials:"SC", area:"Central Scotland", desc:"Structural calculations, beam design, alteration advice and engineering support."}
+      ],
+      "Estate Agent": [
+        {name:"Example Property", initials:"EP", area:"Perthshire", desc:"Residential sales, valuations and local property marketing."}
+      ],
+      "Mortgage Broker": [
+        {name:"Example Mortgage Advice", initials:"MA", area:"Scotland", desc:"Residential, buy-to-let and property finance advice."}
+      ],
+      "Solicitor": [
+        {name:"Example Legal", initials:"EL", area:"Scotland", desc:"Conveyancing, commercial property and general legal services."}
+      ],
+      "Accountant": [
+        {name:"Example Accountancy", initials:"EA", area:"Scotland", desc:"Accounts, bookkeeping, tax and business support for trades and property businesses."}
+      ]
+    };
+
+    function demoMembers(category) {
+      if (memberData[category]) return memberData[category];
+      const initials = category.split(/\s|&/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();
+      return [
+        {
+          name:`Example ${category} Business`,
+          initials: initials || "TC",
+          area:"Scotland",
+          desc:`Approved ${category.toLowerCase()} member profile placeholder. Business details, coverage area and services will appear here.`
+        }
+      ];
+    }
+
+    function openMembers(category) {
+      const panel = document.getElementById("memberPanel");
+      const grid = document.getElementById("memberGrid");
+      document.getElementById("memberCategory").textContent = category;
+      document.getElementById("memberIntro").textContent =
+        category === "Joiner"
+          ? "Approved Trade Connect Scotland joinery member."
+          : `Trade Connect Scotland members listed under ${category}.`;
+      grid.innerHTML = "";
+
+      demoMembers(category).forEach(member => {
+        const card = document.createElement("article");
+
+        if (member.fullProfile) {
+          card.className = "member-card full";
+          card.innerHTML = `
+            <div class="member-full-grid">
+              <div>
+                <div class="member-logo">${member.initials}</div>
+              </div>
+              <div>
+                ${member.featured ? '<div class="member-badge">Founding Member</div>' : ''}
+                <h4>${member.name}</h4>
+                <div class="member-meta">📍 ${member.area}</div>
+                <p>${member.desc}</p>
+                <div class="member-service-list">
+                  ${(member.services || []).map(service => `<span>${service}</span>`).join("")}
+                </div>
+                <div class="member-full-contact">
+                  <button class="mini-btn primary" onclick="requestQuote('${member.name.replace(/'/g,"\\'")}')">Request a Quote</button>
+                  ${member.website ? `<a class="mini-btn" href="${member.website}" target="_blank" rel="noopener">Visit Website</a>` : ''}
+                  ${member.phone ? `<a class="mini-btn" href="tel:${member.phone.replace(/\s/g,'')}">Call ${member.phone}</a>` : ''}
+                  ${member.email ? `<a class="mini-btn" href="mailto:${member.email}">Email</a>` : ''}
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          card.className = "member-card";
+          card.innerHTML = `
+            <div class="member-logo">${member.initials}</div>
+            <h4>${member.name}</h4>
+            <div class="member-meta">📍 ${member.area}</div>
+            <p>${member.desc}</p>
+            ${member.featured ? '<div class="member-badge">Founding Member</div>' : ''}
+            <div class="member-actions">
+              <button class="mini-btn primary" onclick="requestQuote('${member.name.replace(/'/g,"\\'")}')">Request a Quote</button>
+              ${member.website ? `<a class="mini-btn" href="${member.website}" target="_blank" rel="noopener">Website</a>` : `<button class="mini-btn" onclick="alert('Full profile page coming next.')">View Profile</button>`}
+              ${member.phone ? `<a class="mini-btn" href="tel:${member.phone.replace(/\s/g,'')}">Call</a>` : ''}
+              ${member.email ? `<a class="mini-btn" href="mailto:${member.email}">Email</a>` : ''}
+            </div>
+          `;
+        }
+
+        grid.appendChild(card);
+      });
+
+      panel.classList.add("active");
+      panel.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+
+    function closeMembers() {
+      document.getElementById("memberPanel").classList.remove("active");
+    }
+
+    function requestQuote(memberName) {
+      document.getElementById("message").value = `I would like to request a quote / introduction to ${memberName}.`;
+      document.getElementById("join").scrollIntoView({behavior:"smooth"});
+    }
+
+
+    document.querySelectorAll(".directory-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const group = button.closest(".directory-group");
+        const isOpen = group.classList.toggle("open");
+        button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+
+    document.querySelectorAll(".trade[data-category]").forEach(card => {
+      card.addEventListener("click", () => {
+        const category = card.dataset.category;
+        const status = card.dataset.status;
+        if (status === "available") {
+          const select = document.getElementById("trade");
+          if (select) {
+            const matching = Array.from(select.options).find(o => o.textContent.trim() === category);
+            if (matching) select.value = matching.value;
+          }
+          const msg = document.getElementById("message");
+          if (msg) msg.value = `I would like to secure the ${category} position in my local area.`;
+          document.getElementById("join").scrollIntoView({behavior:"smooth"});
+        } else {
+          openMembers(category);
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    async function loadEditableContent() {
+      try {
+        const response = await fetch("/content/site.json", { cache: "no-store" });
+        if (!response.ok) return;
+        const data = await response.json();
+
+        if (data.site) {
+          const title = document.getElementById("heroTitle");
+          const text = document.getElementById("heroText");
+          const price = document.getElementById("membershipPrice");
+          const monthly = document.getElementById("membershipMonthly");
+          if (title && data.site.hero_title) title.textContent = data.site.hero_title;
+          if (text && data.site.hero_text) text.textContent = data.site.hero_text;
+          if (price && data.site.membership_price != null) price.textContent = data.site.membership_price;
+          if (monthly && data.site.membership_monthly != null) monthly.textContent = Number(data.site.membership_monthly).toFixed(2);
+        }
+
+        if (Array.isArray(data.categories)) {
+          data.categories.forEach(item => {
+            const card = Array.from(document.querySelectorAll(".trade[data-category]"))
+              .find(el => el.dataset.category === item.name);
+            if (!card) return;
+            const status = item.status === "taken" ? "taken" : "available";
+            card.dataset.status = status;
+            const badge = card.querySelector(".status-badge");
+            const action = card.querySelector(".trade-action");
+            if (badge) {
+              badge.className = "status-badge " + status;
+              badge.textContent = status === "taken" ? "Taken" : "Available";
+            }
+            if (action) action.textContent = status === "taken" ? "View →" : "Secure this position →";
+          });
+        }
+
+        if (Array.isArray(data.members)) {
+          window.cmsMembers = data.members;
+          const joiner = data.members.find(m => m.category === "Joiner");
+          if (joiner && window.memberData) {
+            window.memberData["Joiner"] = [{
+              name: joiner.name,
+              initials: joiner.name.split(/\s+/).filter(Boolean).slice(0,2).map(w => w[0]).join("").toUpperCase(),
+              area: joiner.area || "",
+              desc: joiner.description || "",
+              phone: joiner.phone || "",
+              website: joiner.website || "",
+              email: joiner.email || "",
+              featured: !!joiner.featured,
+              fullProfile: true,
+              services: joiner.services || []
+            }];
+          }
+        }
+      } catch (error) {
+        console.warn("Editable content could not be loaded.", error);
+      }
+    }
+
+    loadEditableContent();
+  </script>
+
+</body>
+</html>
