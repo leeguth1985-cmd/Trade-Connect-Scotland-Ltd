@@ -1,0 +1,58 @@
+backend:
+  name: github
+  repo: REPLACE_WITH_GITHUB_USERNAME/trade-connect-scotland
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Website Settings"
+    files:
+      - name: "main"
+        label: "Main Website"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Website"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Main Headline", name: "hero_title", widget: "string" }
+              - { label: "Homepage Intro", name: "hero_text", widget: "text" }
+              - { label: "Annual Membership (£)", name: "membership_price", widget: "number", value_type: "float" }
+              - { label: "Monthly Equivalent (£)", name: "membership_monthly", widget: "number", value_type: "float" }
+              - { label: "Meeting Note", name: "meeting_note", widget: "text" }
+
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.category}}"
+            fields:
+              - { label: "Business Name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Area", name: "area", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Phone", name: "phone", widget: "string", required: false }
+              - { label: "Email", name: "email", widget: "string", required: false }
+              - { label: "Website", name: "website", widget: "string", required: false }
+              - { label: "Featured / Founding Member", name: "featured", widget: "boolean", default: false }
+              - label: "Services"
+                name: "services"
+                widget: "list"
+                field: { label: "Service", name: "service", widget: "string" }
+
+          - label: "Trade & Business Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.status}}"
+            fields:
+              - { label: "Category", name: "name", widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Available", value: "available" }
+                  - { label: "Taken", value: "taken" }
+              - { label: "Member / Business", name: "member", widget: "string", required: false }
